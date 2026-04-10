@@ -113,7 +113,7 @@ export default function InspectionDetail() {
             </Select>
           </div>
           <div className="flex flex-wrap gap-4 text-sm text-muted-foreground">
-            <span className="flex items-center gap-1.5"><Calendar className="w-4 h-4" />{format(new Date(inspection.date), "dd 'de' MMMM 'de' yyyy", { locale: ptBR })}</span>
+            <span className="flex items-center gap-1.5"><Calendar className="w-4 h-4" />{format(new Date(inspection.date), "dd 'de' MMMM 'de' yyyy", { locale: ptBR })}{inspection.time ? ` às ${inspection.time}` : ''}</span>
             <span className="flex items-center gap-1.5"><User className="w-4 h-4" />{inspection.responsible}</span>
             <span className="flex items-center gap-1.5"><MapPin className="w-4 h-4" />{inspection.faultLocations.length} ponto(s) mapeado(s)</span>
           </div>

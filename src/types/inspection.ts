@@ -23,6 +23,7 @@ export type InspectionStatus = 'pending' | 'in_progress' | 'completed';
 export interface Inspection {
   id: string;
   date: string;
+  time: string;
   location: string;
   responsible: string;
   description: string;
