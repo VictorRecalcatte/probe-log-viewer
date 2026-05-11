@@ -1,0 +1,36 @@
+name: Testes Automatizados
+
+on:
+  push:
+    branches:
+      - principal
+      - main
+  pull_request:
+    branches:
+      - principal
+      - main
+
+jobs:
+  testes:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Baixar código do repositório
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Instalar dependências
+        run: npm install
+
+      - name: Executar testes unitários
+        run: npm test
+
+      - name: Instalar navegadores do Playwright
+        run: npx playwright install --with-deps
+
+      - name: Executar testes de interface
+        run: npx playwright test
