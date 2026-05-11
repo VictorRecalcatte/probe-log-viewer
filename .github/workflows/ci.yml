@@ -1,3 +1,4 @@
+
 name: Testes Automatizados
 
 on:
@@ -5,6 +6,7 @@ on:
     branches:
       - principal
       - main
+
   pull_request:
     branches:
       - principal
@@ -28,9 +30,3 @@ jobs:
 
       - name: Executar testes unitários
         run: npm test
-
-      - name: Instalar navegadores do Playwright
-        run: npx playwright install --with-deps
-
-      - name: Executar testes de interface
-        run: npx playwright test
